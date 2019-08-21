@@ -1,0 +1,46 @@
+<aura:component >
+	 <!-- CREATE NEW EXPENSE -->
+    <div aria-labelledby="newitemform">
+        <!-- BOXED AREA -->
+        <fieldset class="slds-box slds-theme--default slds-container--small">
+        <legend id="newitemform" class="slds-text-heading--small 
+          slds-p-vertical--medium">
+          Add 
+        </legend>
+  
+        <!-- CREATE NEW EXPENSE FORM -->
+        <form class="slds-form--stacked">          
+            <lightning:input aura:id="itemform" label="Expense Name"
+                             name="itemname"
+                             value="{!v.newItem.Name}"
+                             required="true"/> 
+            <lightning:input type="number" aura:id="itemform" label="Price"
+                             name="itemprice"
+                             min="0.1"
+                             formatter="currency"
+                             step="0.01"
+                             value="{!v.newItem.Price__c}"
+                             messageWhenRangeUnderflow="Enter an amount that's at least $0.10."/>
+    
+             <lightning:input type="number" aura:id="itemform" label="Quantity"
+                             name="itemquantity"
+                             min="1"
+                             formatter="currency"
+                             step="0.01"
+                             value="{!v.newItem.Quantity__c}"
+                             messageWhenRangeUnderflow="Enter an amount that's at least $1.00."/>
+            <lightning:input type="checkbox" aura:id="itemform" label="Packed?"  
+                             name="packed"
+                             checked="{!v.newItem.Packed__c}"/>
+            <lightning:button label="Create item" 
+                              class="slds-m-top--medium"
+                              variant="brand"
+                              onclick="{!c.clickCreateItem}"/>
+            </form>
+        <!-- / CREATE NEW EXPENSE FORM -->
+  
+      </fieldset>
+      <!-- / BOXED AREA -->
+    </div>
+            <!-- / CREATE NEW EXPENSE -->
+</aura:component>

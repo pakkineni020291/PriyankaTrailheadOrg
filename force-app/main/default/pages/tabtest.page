@@ -1,0 +1,8 @@
+<apex:page standardController="Account" showHeader="true" lightningStylesheets="true">
+            
+    <!-- Create Tab panel -->
+    <apex:tabPanel switchType="client" selectedTab="name2" id="AccountTabPanel">
+        <apex:tab label="One" name="name1" id="tabOne">content for tab one</apex:tab>
+        <apex:tab label="Two" name="name2" id="tabTwo">content for tab two</apex:tab>
+    </apex:tabPanel>
+</apex:page>
